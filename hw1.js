@@ -8,7 +8,7 @@
 <html>
 <head>
 <style>
-.cities {
+.shopping list {
   background-color: black;
   color: white;
   margin: 20px;
