@@ -10,39 +10,42 @@ Creates a shopping list and displays it on shopping.innerHTML
 */
 
 //
-window.onload= function(){
+window.onload = function(){
 //You will call the functions you wrote here
+  printList();
 }
 
 
 //Prints the shopping list on the web page by changing the html code
 //list: Array of items
 function printList(list){
-  let item = prompt('What would you like to buy today?');
-  let price = prompt('What is its price?');
-  let count = prompt('How many do you want?');
-  let totalTotal = 0;
-  if (price != null && count != null) {
-    totalTotal += parseInt(price) * parseInt(count); 
+  let name = prompt("What would you like to buy?");
+  let price = prompt("What is its price?");
+  let count = prompt("How many do you want?");
+  let total = 0;
+  if(price != null && count != null){
+    total += parseInt(price)*parseInt(count);
   }
-  list = [{item:item, price:price, count:count}];
-  while(true) {
-    if (item == null || price == null || count == null){
-        console.log(totalTotal);
-        list.pop()
-        break;
+  list = [{name:name, price:price, count:count}];
+  while(true){
+    if (name === null || price === null || count == null){
+      console.log(total);
+      list.pop()
+      break;
     }
-    else {
-      item = prompt('What would you like to buy today?');
-      price = prompt('What is its price?');
-      count = prompt('How many do you want?');
-      if (price != null && count != null) {
-            totalTotal += parseInt(price) * parseInt(count);
+    else{
+      name = prompt("What would you like to buy?");
+      price = prompt("What is its price?");
+      count = prompt("How many do you want?");
+      if(price != null && count != null){
+        total += parseInt(price)*parseInt(count);
       }
-      list.push({item:item, price:price, count:count})
-      console.log(totalTotal);
+      list.push({name:name, price:price, count:count})
+      console.log(total);
     }
+  }
     for(let i = 0; i < list.length; i++){
         document.getElementById("shoppingList").innerHTML += "<tr><td>" + list[i].name  + "</td> <td>" + list[i].price  + "</td> <td>" + list[i].count  +'</td></tr>';
     }
+    document.getElementById("total").innerHTML = "Your total is $" + total;
 }
