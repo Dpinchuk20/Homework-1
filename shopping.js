@@ -1,10 +1,3 @@
-/* Dennis Pinchuk
- * Javascript assignment
- * Funda
- * CS 188
- */
-
-
 /**
 Creates a shopping list and displays it on shopping.innerHTML
 */
