@@ -2,20 +2,22 @@
  * Javascript assignment
  * Funda
  * CS 188
- */ 
+ */
 
-/*
-Creates a shopping list and will display it on shoppingList.innerhtml
+
+/**
+Creates a shopping list and displays it on shopping.innerHTML
 */
 
-window.onload = function() {
-
+//
+window.onload= function(){
+//You will call the functions you wrote here
 }
 
 
-// Prints the shopping list
-// An array of items
-function printlist(list) {
+//Prints the shopping list on the web page by changing the html code
+//list: Array of items
+function printList(list){
   let item = prompt('What would you like to buy today?');
   let price = prompt('What is its price?');
   let count = prompt('How many do you want?');
@@ -40,7 +42,7 @@ function printlist(list) {
       list.push({item:item, price:price, count:count})
       console.log(totalTotal);
     }
-  for (let i = 0; i < list.length; i++){
-       document.getElementById("shoppingList").innerHTML += "<tr><td>" + list[i].item + "</td><td>" + list[i].price + "</td><td>" + list[i].count;
-  }  
+    for(let i = 0; i < list.length; i++){
+        document.getElementById("shoppingList").innerHTML += "<tr><td>" + list[i].name  + "</td> <td>" + list[i].price  + "</td> <td>" + list[i].count  +'</td></tr>';
+    }
 }
